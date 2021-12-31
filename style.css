@@ -1,29 +1,139 @@
-@font-face {
-  font-family: RobotoMono-Regular;
-  src: url("../assets/font/Roboto_Mono/static/RobotoMono-Regular.ttf")
-    format("truetype");
-  font-weight: regular;
-  font-style: normal;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-@font-face {
-  font-family: RobotoMono;
-  src: url("../assets/font/Roboto_Mono/RobotoMono-VariableFont_wght.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
+html,
 body {
-  background-color: #ffeb3b;
-  color: black;
-  text-align: center;
+  /* position, dimensions */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* behavioral settings */
+  /* overflow: hidden; */
+  /* styles, colours */
+  background: #1a1a1a;
+  color: white;
+  /* fonts */
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  text-align: left;
 }
-h1 {
-  font-family: "RobotoMono", Roboto Mono, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+a {
+  /* behavioral settings */
+  display: inline-block;
+  cursor: pointer;
+  /* styles, colours */
+  color: inherit;
+  text-decoration: none;
 }
-p {
-  font-family: "RobotoMono", Roboto Mono, sans-serif;
-  font-weight: 300;
-  font-style: normal;
+
+a.link::after {
+  content: "";
+  /* position, dimensions */
+  width: 0px;
+  height: 1px;
+  /* behavioral settings */
+  display: block;
+  /* styles, colours */
+  background: white;
+  /* animations */
+  transition: 300ms;
+}
+
+a.link:hover::after {
+  /* position, dimensions */
+  width: 100%;
+}
+
+#container {
+  /* position, dimensions */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 10px;
+  /* behavioral settings */
+  display: flex;
+  flex-direction: column;
+}
+
+#background_logo {
+  /* position, dimensions */
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  margin: 0px;
+  padding: 0px;
+  /* behavioral settings */
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  /* styles, colours */
+  background: transparent;
+}
+
+#logo {
+  /* position, dimensions */
+  position: relative;
+  width: auto;
+  height: 100%;
+  /* behavioral settings */
+  align-self: flex-end;
+}
+
+.header {
+  /* position, dimensions */
+  position: relative;
+  max-width: 25%;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0px;
+  padding: 0px;
+  /* styles, colours */
+  background: transparent;
+}
+
+.footer {
+  /* position, dimensions */
+  position: relative;
+  max-width: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0px;
+  padding: 0px;
+  margin-top: auto;
+  /* styles, colours */
+  background: transparent;
+}
+
+/* responsiveness */
+@media only screen and (max-width: 480px) {
+  #logo {
+    width: 100%;
+    height: auto;
+  }
+  .header,
+  .footer {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  #logo {
+    width: 100%;
+    height: auto;
+  }
+  .header,
+  .footer {
+    max-width: 75%;
+  }
 }
